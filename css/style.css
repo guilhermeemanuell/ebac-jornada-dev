@@ -20,6 +20,10 @@ body {
   background-color: var(--bg-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* .contact-info a, */
 .contact-info a:visited {
   color: var(--text-desc-color);
@@ -34,17 +38,19 @@ body {
 }
 
 .left-section {
+  margin-top: 2rem;
   grid-column: span 2;
   height: 100%;
   background-color: var(--contact-color);
-  border-radius: 30px 0px 0px 30px;
+  border-radius: 30px 0px 0px 0px;
 }
 
 .right-section {
+  margin-top: 2rem;
   grid-column: span 5;
   height: 100%;
   background-color: var(--desc-color);
-  /* border-radius: 0px 60px 0px 0px; */
+  border-radius: 0px 0px 30px 0px;
 }
 
 .left-section-contents {
@@ -227,7 +233,7 @@ svg {
 /* footer */
 footer p {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   color: var(--text-color);
   letter-spacing: 1px;
@@ -248,6 +254,27 @@ footer p span:hover {
 .skills li:hover {
   animation: pulse; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 200ms; /* don't forget to set a duration! */
+}
+
+/* back to top */
+#backToTopButton {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100%);
+  transition: 200ms;
+}
+
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+svg circle {
+  fill: var(--text-color);
 }
 
 /* Media queries */
